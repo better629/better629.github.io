@@ -1,0 +1,10 @@
+User-agent: * Allow: /
+Allow: /archives/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+Sitemap: http://cloudsnail.live/sitemap.xml
+Sitemap: http://cloudsnail.live/baidusitemap.xml
