@@ -4,27 +4,5 @@
 
     
     
-  <url>
-    <loc>http://yoursite.com/2018/06/20/hello-world/</loc>
-    <lastmod>2018-06-21T14:40:09.333Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-06-20T15:50:58.042Z</pubTime>
-        
-        <tag>test</tag>
-         
-        <tag>hello</tag>
-         
-         
-           
-             
-              <breadCrumb title="测试" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
 </urlset>
