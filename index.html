@@ -309,7 +309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/22/blog-deploy-md/" itemprop="url">我的第一篇博文献给最美丽的星星~</a></h1>
+                <a class="post-title-link" href="/2018/06/22/blog-deploy-md/" itemprop="url">基于hexo和github的个人主域博客搭建</a></h1>
         
 
         <div class="post-meta">
@@ -344,8 +344,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
                   </a>
                 </span>
 
@@ -383,10 +383,51 @@
       
         
           
-            <center>仅以此篇献给 在我身边的 星星~</center><br>        <center>love</center>
-
-<p><img src="/upload_images/WechatIMG1.jpeg" alt=""></p>
-
+            <p></p><h3>写在前面</h3><br>一直想有个自己的个人主域博客来记录自己的生活&amp;学习，刚好看到网上也有利用hexo和github来搭建的。虽然是渲染的是静态页面，但却可以省去主机等的麻烦，也是一件好事。<br>最好的效果就是：访问你的个人域名（your_domain_name.com）时，就会自动访问到github主页地址（your_github_name.github.io）。<p></p>
+<p></p><h3>动起手来</h3><p></p>
+<p></p><h4>hexo</h4><p></p>
+<ul>
+<li>hexo安装<br>1.安装node.js（<a href="http://nodejs.cn/download/）；安装git" target="_blank" rel="noopener">http://nodejs.cn/download/）；安装git</a><br>2.通过npm安装hexo，npm install -g hexo<br>3.在开发机上新建一个 文件夹 your_domain_name（或者其他名称能区分是博客即可）。进入文件夹，执行hexo init，初始化博客内容。文件夹内主要的三个文件&amp;文件夹是：<br><code>_config.yml</code> 站点配置文件<br><code>source</code> 博客内容存放位置<br><code>themes</code> 博客主题存放位置</li>
+<li>hexo命令<br><code>hexo n 新的博客.md</code> 新建博客<br><code>hexo n page page.md</code> 新建页面<br><code>hexo clean</code> 清除缓存<br><code>hexo g</code> 本地生成博客静态文件<br><code>hexo s</code> 启动本地访问服务，默认地址：localhost:4000<br><code>hexo d</code> 将本地文件提交到github</li>
+</ul>
+<p></p><h4>github</h4><p></p>
+<ul>
+<li>创建个好听用户名的github账号，然后新建个repository，名称为: your_github_name.github.io  </li>
+<li>关联hexo的github主域地址。在 your_domain_name文件夹内的_config.yml中，设置：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/your_github_name/your_github_name.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>执行 <code>npm install hexo-deployer-git –save</code><br>执行 <code>hexo g</code> <code>hexo d</code> <code>hexo s</code><br>即可以通过 localhost:4000 和 your_github_name.github.io访问 使用hexo默认主题生成的博客了。</li>
+</ul>
+<p></p><h4>购买域名</h4><p></p>
+<ul>
+<li>godaddy域名购买<br>推荐使用godaddy购买域名，支持支付宝付款。<br>付款成功后，godaddy会向注册邮箱发送验证邮件，验证后，才能进行域名的相关设置。</li>
+<li>nameserver（域名服务器）设置<br>由于推荐使用dnspod作为dns服务，需要在账户中【我的产品】、域名【DNS】，将域名服务器更新为  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f1g1ns1.dnspod.net</span><br><span class="line">f1g1ns1.dnspod.net</span><br></pre></td></tr></table></figure>
+<ul>
+<li>购买注意事项<br>1.在<a href="https://account.godaddy.com/【账户设置】补全基本资料，**默认货币选择USD**；付款时，在付款页面最下角选择**USD**。这样在使用支付宝付款时，才能出现有效扫码付款弹框。" target="_blank" rel="noopener">https://account.godaddy.com/【账户设置】补全基本资料，**默认货币选择USD**；付款时，在付款页面最下角选择**USD**。这样在使用支付宝付款时，才能出现有效扫码付款弹框。</a><br>2.付款时去<a href="https://www.dute.me/获取优惠码，新单可便宜35%。" target="_blank" rel="noopener">https://www.dute.me/获取优惠码，新单可便宜35%。</a></li>
+</ul>
+<p></p><h4>dns服务器</h4><p></p>
+<ul>
+<li>dnspod<br>注册登录dnspod，访问【域名解析】（dnspod被腾讯云买了，腾讯的手真长），会让你【切换到腾讯云控制台】。跳转后，在【我的域名】处新增刚购买的域名，然后【添加解析】进行设置<br><img src="/upload_images/blog_deploy/dnspod.jpeg" alt=""><br>设置主机记录为 <code>@</code> <code>www</code> ，那么以后访问时就可以通过 <a href="http://www.your\_domain\_name" target="_blank" rel="noopener">www.your\_domain\_name</a> 或者 your_domain_name访问了。记录值为你的 your_github_name.github.io。<br>设置完上述内容后，即可重新部署，通过个人域名来访问博客了。  </li>
+</ul>
+<p></p><h4>hexo Next主题</h4>  <p></p>
+<ul>
+<li>Next主题获取<br>在your_domain_name文件夹内执行 <code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code>获取next主题<br>在根目录的_config.yml，设置 <code>theme: next</code></li>
+<li>新建tags（标签）页、categories（分类）页等<br><code>hexo n page tags</code> 新建tags页，后续所有博文内记录的tags都会显示在tags页上，其他类型。没有新建tags页，访问 your_domain_name/tags/ 就会404了。</li>
+<li>新建博客<br><code>hexo n 新建博客.md</code> 即可使用markdown语法编辑新的博文<br>每个新建的博客都有默认的标题（title）、tags（标签）、categories（分类）等。如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 基于hexo和github的个人主域博客搭建</span><br><span class="line">copyright: true</span><br><span class="line">date: 2018-06-22 21:55:36</span><br><span class="line">tags:</span><br><span class="line">        - 博客</span><br><span class="line">categories:</span><br><span class="line">        - 教程</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ul>
+<li>新建博客时的配置模板<br>在根目录下的<code>/scaffolds/post.md</code>文件中设置  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">copyright: true</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>后面就可以为博客设置标签和分类了，比较方便。</p>
+<ul>
+<li>去掉网页底部的Power by **字样<br>在根目录下<code>themes/next/_config.yml</code>中，设置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">footer:</span><br><span class="line">  # Specify the date when the site was setup.</span><br><span class="line">  # If not defined, current year will be used.</span><br><span class="line">  since: 2018</span><br><span class="line"></span><br><span class="line">  # Icon between year and copyright info.</span><br><span class="line">  icon: user</span><br><span class="line"></span><br><span class="line">  # If not defined, will be used `author` from Hexo main config.</span><br><span class="line">  copyright:</span><br><span class="line">  # -------------------------------------------------------------</span><br><span class="line">  # Hexo link (Powered by Hexo).</span><br><span class="line">  powered: false  #设置这里</span><br><span class="line"></span><br><span class="line">  theme:</span><br><span class="line">    # Theme &amp; scheme info link (Theme - NexT.scheme).</span><br><span class="line">    enable: false  #设置这里</span><br><span class="line">    # Version info of NexT after scheme info (vX.X.X).</span><br><span class="line">    version: false</span><br></pre></td></tr></table></figure>
           
         
       

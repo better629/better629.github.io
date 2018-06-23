@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[我的第一篇博文献给最美丽的星星~]]></title>
+    <title><![CDATA[基于hexo和github的个人主域博客搭建]]></title>
     <url>%2F2018%2F06%2F22%2Fblog-deploy-md%2F</url>
-    <content type="text"><![CDATA[仅以此篇献给 在我身边的 星星~ love]]></content>
+    <content type="text"><![CDATA[写在前面一直想有个自己的个人主域博客来记录自己的生活&amp;学习，刚好看到网上也有利用hexo和github来搭建的。虽然是渲染的是静态页面，但却可以省去主机等的麻烦，也是一件好事。最好的效果就是：访问你的个人域名（your_domain_name.com）时，就会自动访问到github主页地址（your_github_name.github.io）。 动起手来 hexo hexo安装1.安装node.js（http://nodejs.cn/download/）；安装git2.通过npm安装hexo，npm install -g hexo3.在开发机上新建一个 文件夹 your_domain_name（或者其他名称能区分是博客即可）。进入文件夹，执行hexo init，初始化博客内容。文件夹内主要的三个文件&amp;文件夹是：_config.yml 站点配置文件source 博客内容存放位置themes 博客主题存放位置 hexo命令hexo n 新的博客.md 新建博客hexo n page page.md 新建页面hexo clean 清除缓存hexo g 本地生成博客静态文件hexo s 启动本地访问服务，默认地址：localhost:4000hexo d 将本地文件提交到github github 创建个好听用户名的github账号，然后新建个repository，名称为: your_github_name.github.io 关联hexo的github主域地址。在 your_domain_name文件夹内的_config.yml中，设置： 1234deploy: type: git repository: https://github.com/your_github_name/your_github_name.github.io.git branch: master 执行 npm install hexo-deployer-git –save执行 hexo g hexo d hexo s即可以通过 localhost:4000 和 your_github_name.github.io访问 使用hexo默认主题生成的博客了。 购买域名 godaddy域名购买推荐使用godaddy购买域名，支持支付宝付款。付款成功后，godaddy会向注册邮箱发送验证邮件，验证后，才能进行域名的相关设置。 nameserver（域名服务器）设置由于推荐使用dnspod作为dns服务，需要在账户中【我的产品】、域名【DNS】，将域名服务器更新为 12f1g1ns1.dnspod.netf1g1ns1.dnspod.net 购买注意事项1.在https://account.godaddy.com/【账户设置】补全基本资料，**默认货币选择USD**；付款时，在付款页面最下角选择**USD**。这样在使用支付宝付款时，才能出现有效扫码付款弹框。2.付款时去https://www.dute.me/获取优惠码，新单可便宜35%。 dns服务器 dnspod注册登录dnspod，访问【域名解析】（dnspod被腾讯云买了，腾讯的手真长），会让你【切换到腾讯云控制台】。跳转后，在【我的域名】处新增刚购买的域名，然后【添加解析】进行设置设置主机记录为 @ www ，那么以后访问时就可以通过 www.your\_domain\_name 或者 your_domain_name访问了。记录值为你的 your_github_name.github.io。设置完上述内容后，即可重新部署，通过个人域名来访问博客了。 hexo Next主题 Next主题获取在your_domain_name文件夹内执行 git clone https://github.com/iissnan/hexo-theme-next.git themes/next获取next主题在根目录的_config.yml，设置 theme: next 新建tags（标签）页、categories（分类）页等hexo n page tags 新建tags页，后续所有博文内记录的tags都会显示在tags页上，其他类型。没有新建tags页，访问 your_domain_name/tags/ 就会404了。 新建博客hexo n 新建博客.md 即可使用markdown语法编辑新的博文每个新建的博客都有默认的标题（title）、tags（标签）、categories（分类）等。如下： 123456789---title: 基于hexo和github的个人主域博客搭建copyright: truedate: 2018-06-22 21:55:36tags: - 博客categories: - 教程--- 新建博客时的配置模板在根目录下的/scaffolds/post.md文件中设置 1234567---title: &#123;&#123; title &#125;&#125;copyright: truedate: &#123;&#123; date &#125;&#125;tags:categories:--- 后面就可以为博客设置标签和分类了，比较方便。 去掉网页底部的Power by **字样在根目录下themes/next/_config.yml中，设置 12345678910111213141516171819footer: # Specify the date when the site was setup. # If not defined, current year will be used. since: 2018 # Icon between year and copyright info. icon: user # If not defined, will be used `author` from Hexo main config. copyright: # ------------------------------------------------------------- # Hexo link (Powered by Hexo). powered: false #设置这里 theme: # Theme &amp; scheme info link (Theme - NexT.scheme). enable: false #设置这里 # Version info of NexT after scheme info (vX.X.X). version: false]]></content>
       <categories>
-        <category>生活</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>生活</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
 </search>

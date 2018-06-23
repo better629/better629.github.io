@@ -5,18 +5,18 @@
     
   <url>
     <loc>http://yoursite.com/2018/06/22/blog-deploy-md/</loc>
-    <lastmod>2018-06-22T14:00:03.364Z</lastmod>
+    <lastmod>2018-06-23T17:51:28.775Z</lastmod>
     <data>
         <display>
-        <title>我的第一篇博文献给最美丽的星星~</title>
+        <title>基于hexo和github的个人主域博客搭建</title>
         <pubTime>2018-06-22T13:55:36.000Z</pubTime>
         
-        <tag>生活</tag>
+        <tag>博客</tag>
          
          
            
              
-              <breadCrumb title="生活" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+              <breadCrumb title="教程" url="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
