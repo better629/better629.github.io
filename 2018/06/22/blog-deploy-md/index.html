@@ -105,7 +105,7 @@
 <meta property="og:description" content="写在前面一直想有个自己的个人主域博客来记录自己的生活&amp;amp;学习，刚好看到网上也有利用hexo和github来搭建的。虽然是渲染的是静态页面，但却可以省去主机等的麻烦，也是一件好事。最好的效果就是：访问你的个人域名（your_domain_name.com）时，就会自动访问到github主页地址（your_github_name.github.io）。 动起手来   hexo    hexo安装">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/upload_images/blog_deploy/dnspod.jpeg">
-<meta property="og:updated_time" content="2018-06-24T02:36:29.906Z">
+<meta property="og:updated_time" content="2018-06-24T02:58:02.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于hexo和github的个人域名博客搭建">
 <meta name="twitter:description" content="写在前面一直想有个自己的个人主域博客来记录自己的生活&amp;amp;学习，刚好看到网上也有利用hexo和github来搭建的。虽然是渲染的是静态页面，但却可以省去主机等的麻烦，也是一件好事。最好的效果就是：访问你的个人域名（your_domain_name.com）时，就会自动访问到github主页地址（your_github_name.github.io）。 动起手来   hexo    hexo安装">
@@ -385,8 +385,8 @@
 <p></p><h3>动起手来</h3>  <p></p>
 <p></p><h4>hexo</h4>  <p></p>
 <ul>
-<li>hexo安装<br>1.安装node.js（<a href="http://nodejs.cn/download/）；安装git" target="_blank" rel="noopener">http://nodejs.cn/download/）；安装git</a><br>2.通过npm安装hexo，npm install -g hexo<br>3.在开发机上新建一个 文件夹 your_domain_name（或者其他名称能区分是博客即可）。进入文件夹，执行hexo init，初始化博客内容。文件夹内主要的三个文件&amp;文件夹是：<br><code>_config.yml</code> 站点配置文件<br><code>source</code> 博客内容存放位置<br><code>themes</code> 博客主题存放位置</li>
-<li>hexo命令<br><code>hexo n 新的博客.md</code> 新建博客<br><code>hexo n page page.md</code> 新建页面<br><code>hexo clean</code> 清除缓存<br><code>hexo g</code> 本地生成博客静态文件<br><code>hexo s</code> 启动本地访问服务，默认地址：localhost:4000<br><code>hexo d</code> 将本地文件提交到github</li>
+<li>hexo安装<br>1.安装node.js（<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a>）；安装git<br>2.通过npm安装hexo，npm install -g hexo<br>3.在开发机上新建一个 文件夹 your_domain_name（或者其他名称能区分是博客即可）。进入文件夹，执行hexo init，初始化博客内容。文件夹内主要的三个文件&amp;文件夹是：<br><code>_config.yml</code> 站点配置文件<br><code>source</code> 博客内容存放位置<br><code>themes</code> 博客主题存放位置</li>
+<li>hexo命令<br><code>hexo n 新的博客.md</code> 新建博客<br><code>hexo n page page.md</code> 新建栏目页面，比如【标签】【分页】<br><code>hexo clean</code> 清除缓存<br><code>hexo g</code> 本地生成博客静态文件<br><code>hexo s</code> 启动本地访问服务，默认地址：localhost:4000<br><code>hexo d</code> 将本地文件提交到github</li>
 </ul>
 <p></p><h4>github</h4>  <p></p>
 <ul>
@@ -405,7 +405,7 @@
 <p>但是有时候我们需要区分github&amp;自搭建git服务等的用户名，这就需要单独进行提交用户名的设置。可在<strong>项目的.git文件夹下进行设置</strong>，即在your_domain_name文件夹内的<code>.deploy_git/.git/config</code>添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">    name = your_github_name</span><br><span class="line">    email = your_github_email@example.com</span><br></pre></td></tr></table></figure>
 <hr>
-<p>虽然hexo-deployer-git的README.md中提到了另一种设置提交用户名的方式：<br>在your_domain_name文件夹内的_config.yml中添加<code>name`</code>email`</p>
+<p>虽然hexo-deployer-git的README.md中提到了另一种设置提交用户名的方式：<br>在your_domain_name文件夹内的_config.yml中添加<code>name</code> <code>email</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt;</span><br><span class="line">  branch: [branch]</span><br><span class="line">  name: [git user]</span><br><span class="line">  email: [git email]</span><br></pre></td></tr></table></figure>
 <p>但我在mac上设置后，<code>hexo d</code>后，提交的用户名还是<code>~/.gitconfig</code>内这个global设置的用户名，而不是_config.yml中设置的name。</p>
 <p></p><h4>购买域名</h4><p></p>
@@ -415,15 +415,15 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f1g1ns1.dnspod.net</span><br><span class="line">f1g1ns1.dnspod.net</span><br></pre></td></tr></table></figure>
 <ul>
-<li>购买注意事项<br>1.在<a href="https://account.godaddy.com/【账户设置】补全基本资料，**默认货币选择USD**；付款时，在付款页面最下角选择**USD**。这样在使用支付宝付款时，才能出现有效扫码付款弹框。" target="_blank" rel="noopener">https://account.godaddy.com/【账户设置】补全基本资料，**默认货币选择USD**；付款时，在付款页面最下角选择**USD**。这样在使用支付宝付款时，才能出现有效扫码付款弹框。</a><br>2.付款时去<a href="https://www.dute.me/获取优惠码，新单可便宜35%。" target="_blank" rel="noopener">https://www.dute.me/获取优惠码，新单可便宜35%。</a></li>
+<li>购买注意事项<br>1.在 <a href="https://account.godaddy.com/" target="_blank" rel="noopener">https://account.godaddy.com/</a>【账户设置】补全基本资料，<strong>默认货币选择USD</strong>；付款时，在付款页面最下角选择<strong>USD</strong>。这样在使用支付宝付款时，才能出现有效扫码付款弹框。<br>2.付款时去 <a href="https://www.dute.me/" target="_blank" rel="noopener">https://www.dute.me/</a> 获取优惠码，新单可便宜35%。</li>
 </ul>
 <p></p><h4>dns服务器</h4><p></p>
 <ul>
-<li>dnspod<br>注册登录dnspod，访问【域名解析】（dnspod被腾讯云买了，腾讯的手真长），会让你【切换到腾讯云控制台】。跳转后，在【我的域名】处新增刚购买的域名，然后【添加解析】进行设置<br><img src="/upload_images/blog_deploy/dnspod.jpeg" alt=""><br>设置主机记录为 <code>@</code> <code>www</code> ，那么以后访问时就可以通过 <a href="http://www.your\_domain\_name" target="_blank" rel="noopener">www.your\_domain\_name</a> 或者 your_domain_name访问了。记录值为你的 your_github_name.github.io。<br>设置完上述内容后，即可重新部署，通过个人域名来访问博客了。  </li>
+<li>dnspod<br>注册登录dnspod，访问【域名解析】（dnspod被腾讯云买了，腾讯的手真长），会让你【切换到腾讯云控制台】。跳转后，在【我的域名】处新增刚购买的域名，然后【添加解析】进行设置<br><img src="/upload_images/blog_deploy/dnspod.jpeg" alt=""><br>设置主机记录为 <code>@</code> <code>www</code> ，那么以后访问时就可以通过 <a href="http://www.your_domain_name" target="_blank" rel="noopener">www.your_domain_name</a> 或者 your_domain_name访问了。记录值为你的 your_github_name.github.io。<br>设置完上述内容后，即可重新部署，通过个人域名来访问博客了。  </li>
 </ul>
 <p></p><h4>hexo Next主题</h4>  <p></p>
 <ul>
-<li>Next主题获取<br>在your_domain_name文件夹内执行 <code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code>获取next主题<br>在根目录的_config.yml，设置 <code>theme: next</code></li>
+<li>Next主题获取<br>在your_domain_name文件夹内执行<br><code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code>获取next主题<br>在根目录的_config.yml，设置 <code>theme: next</code></li>
 <li>新建tags（标签）页、categories（分类）页等<br><code>hexo n page tags</code> 新建tags页，后续所有博文内记录的tags都会显示在tags页上，其他类型。没有新建tags页，访问 your_domain_name/tags/ 就会404了。</li>
 <li>新建博客<br><code>hexo n 新建博客.md</code> 即可使用markdown语法编辑新的博文<br>每个新建的博客都有默认的标题（title）、tags（标签）、categories（分类）等。如下：</li>
 </ul>
