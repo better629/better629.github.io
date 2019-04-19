@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2019/04/19/%E6%BD%AE%E6%B1%95%E6%B8%B8-md/</loc>
+    <lastmod>2019-04-19T12:57:41.724Z</lastmod>
+    <data>
+        <display>
+        <title>潮汕游.md</title>
+        <pubTime>2019-04-19T11:47:13.000Z</pubTime>
+        
+        <tag>潮汕 潮州 汕头 南澳岛</tag>
+         
+         
+           
+             
+              <breadCrumb title="攻略" url="http://yoursite.com/categories/%E6%94%BB%E7%95%A5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/06/22/blog-deploy-md/</loc>
-    <lastmod>2018-06-24T02:58:02.237Z</lastmod>
+    <lastmod>2018-06-24T02:58:02.000Z</lastmod>
     <data>
         <display>
         <title>基于hexo和github的个人域名博客搭建</title>
